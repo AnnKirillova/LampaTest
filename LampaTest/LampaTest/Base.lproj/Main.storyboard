@@ -8,6 +8,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Film Controller-->
+        <scene sceneID="ceh-Uw-Z08">
+            <objects>
+                <viewController storyboardIdentifier="FilmController" id="jWP-fR-Oew" customClass="FilmController" customModule="LampaTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lwY-fc-2m1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fire" translatesAutoresizingMaskIntoConstraints="NO" id="aVb-km-hfC">
+                                <rect key="frame" x="94.5" y="148.5" width="225" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="4OE-Ut-yje"/>
+                                    <constraint firstAttribute="width" secondItem="aVb-km-hfC" secondAttribute="height" multiplier="3:4" id="oZt-fm-tKu"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qIA-ZI-Qh7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aVb-km-hfC" firstAttribute="centerX" secondItem="lwY-fc-2m1" secondAttribute="centerX" id="Hpy-vN-WJJ"/>
+                            <constraint firstItem="aVb-km-hfC" firstAttribute="centerY" secondItem="lwY-fc-2m1" secondAttribute="centerY" multiplier="1:1.5" id="QV3-Ja-I4g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="filmImage" destination="aVb-km-hfC" id="t51-gv-qfj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GWz-gg-4gT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1059.4202898550725" y="829.6875"/>
+        </scene>
         <!--Stories Controller-->
         <scene sceneID="zRa-qp-03W">
             <objects>
@@ -129,6 +160,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Fire" width="256" height="256"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

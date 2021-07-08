@@ -11,6 +11,7 @@ import UIKit
 class StoriesController: UIViewController {
     
     let apiManager = APIManager()
+    
     var movies = [Movie]()
     let topFilms = "topFilmCell"
     let regularFilms = "regularFilmCell"
@@ -30,6 +31,10 @@ class StoriesController: UIViewController {
             }
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
   
 }
 
@@ -41,8 +46,8 @@ extension StoriesController: UITableViewDelegate, UITableViewDataSource{
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0{
-            let cell = tableView.dequeueReusableCell(withIdentifier: topFilms, for: indexPath)
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: topFilms, for: indexPath) as! topFilmCell
+            cell.set(movie: movies[indexPath.row])
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: regularFilms, for: indexPath) as! RegularFilmCell
@@ -52,5 +57,12 @@ extension StoriesController: UITableViewDelegate, UITableViewDataSource{
         }
            
 }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let story = self.storyboard!
+        let vc = story.instantiateViewController(identifier: "FilmController") as! FilmController
+        vc.film = movies[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
+

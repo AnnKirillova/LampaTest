@@ -18,7 +18,16 @@ class topFilmCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        top.layer.cornerRadius = 11
+        top.layer.cornerRadius = 15
+        let initialColor = UIColor.clear
+                let finalColor = UIColor.black
+                
+                let gradientLayer = CAGradientLayer()
+                gradientLayer.type = .axial
+                gradientLayer.colors = [initialColor.cgColor, finalColor.cgColor]
+                gradientLayer.locations = [0, 1]
+                gradientLayer.frame = imageOfTopFilm.bounds
+                imageOfTopFilm.layer.addSublayer(gradientLayer)
         
     }
     
@@ -39,5 +48,7 @@ class topFilmCell: UITableViewCell {
         
         let attributedString: NSMutableAttributedString = NSMutableAttributedString(attributedString: linkOfMovies.attributedText!)
         attributedString.setAttributes([.link: urlPolicy], range: NSRange(location: 0, length: 25))
+        
     }
+    
 }
