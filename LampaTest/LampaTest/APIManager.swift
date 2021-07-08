@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 struct MoviewsResponse: Codable {
     let page: Int
     let results: [Movie]
@@ -31,15 +33,16 @@ struct Movie: Codable {
     var vote_count: Int
 }
 
+
 class APIManager{
+    
     var movies = [Movie]()
     
     
     func getMovies(completion: @escaping (_ result: MoviewsResponse) -> ()){
-        let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=f910e2224b142497cc05444043cc8aa4") as! URL
+        let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=f910e2224b142497cc05444043cc8aa4")!
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { data, response, error in
-//            completion(result: String(data: data ?? NSData(), encoding: NSUTF8StringEncoding) ?? "")
             
             if error != nil {
                 print(error?.localizedDescription)
