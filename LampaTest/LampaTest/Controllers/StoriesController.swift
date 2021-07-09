@@ -16,11 +16,16 @@ class StoriesController: UIViewController {
     let topFilms = "topFilmCell"
     let regularFilms = "regularFilmCell"
     @IBOutlet weak var tableViewOfFilms: UITableView!
-    let films = [APIManager]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-                            
+        setUpTable()
+        self.tableViewOfFilms.contentInset = UIEdgeInsets(top: 132, left: 0, bottom: 0, right: 0)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    func setUpTable(){
         tableViewOfFilms.register(UINib(nibName: topFilms, bundle: nil), forCellReuseIdentifier: topFilms)
         tableViewOfFilms.register(UINib(nibName: regularFilms, bundle: nil), forCellReuseIdentifier: regularFilms)
 
@@ -30,10 +35,6 @@ class StoriesController: UIViewController {
                 self.tableViewOfFilms.reloadData()
             }
         }
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
   
 }

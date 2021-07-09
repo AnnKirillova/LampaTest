@@ -83,15 +83,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4f6-Q2-2Oc">
-                                <rect key="frame" x="149" y="430" width="116" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No films" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4f6-Q2-2Oc">
+                                <rect key="frame" x="154" y="430" width="106" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="G5d-1W-bdR"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4f6-Q2-2Oc" firstAttribute="centerX" secondItem="s4z-DW-XXc" secondAttribute="centerX" id="6Ma-8i-5Qr"/>
                             <constraint firstItem="4f6-Q2-2Oc" firstAttribute="centerY" secondItem="s4z-DW-XXc" secondAttribute="centerY" id="BqQ-bu-Bpq"/>
@@ -110,15 +110,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aei-k7-ayM">
-                                <rect key="frame" x="149" y="430" width="116" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No favourites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aei-k7-ayM">
+                                <rect key="frame" x="122" y="430" width="170.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4ym-KE-FXM"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aei-k7-ayM" firstAttribute="centerY" secondItem="ACd-nb-PS6" secondAttribute="centerY" id="X4O-XE-chg"/>
                             <constraint firstItem="aei-k7-ayM" firstAttribute="centerX" secondItem="ACd-nb-PS6" secondAttribute="centerX" id="YjP-W2-lBU"/>
@@ -128,6 +128,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXk-SI-JnV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2271" y="830"/>
+        </scene>
+        <!--Search Controller-->
+        <scene sceneID="ecq-xJ-mS6">
+            <objects>
+                <viewController storyboardIdentifier="SearchController" id="ueU-ue-mIP" customClass="SearchController" customModule="LampaTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7zG-IW-3I2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jgf-8c-0Kq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ueU-ue-mIP" id="cQN-bI-uH0"/>
+                                    <outlet property="delegate" destination="ueU-ue-mIP" id="2Xq-VP-1C1"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IJP-v3-AEq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jgf-8c-0Kq" firstAttribute="trailing" secondItem="IJP-v3-AEq" secondAttribute="trailing" id="GYB-4k-fcB"/>
+                            <constraint firstItem="jgf-8c-0Kq" firstAttribute="leading" secondItem="IJP-v3-AEq" secondAttribute="leading" id="Rlj-BP-kKj"/>
+                            <constraint firstAttribute="bottom" secondItem="jgf-8c-0Kq" secondAttribute="bottom" id="epF-V9-Aao"/>
+                            <constraint firstItem="jgf-8c-0Kq" firstAttribute="top" secondItem="7zG-IW-3I2" secondAttribute="top" id="y7Q-Aj-yPb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableOfSearchFilms" destination="jgf-8c-0Kq" id="AoN-u4-WDD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BmF-ed-agP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105.79710144927537" y="1553.5714285714284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Egc-Lo-bzU">
@@ -164,14 +198,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -20,12 +20,13 @@ class FilmController: UIViewController {
             return
         }
         set(movie: film)
-        
     }
     
     func set(movie: Movie){
         let imgURL = URL(string: "https://image.tmdb.org/t/p/w500\(movie.poster_path)")
         filmImage.kf.setImage(with: imgURL)
+        title = movie.original_title
     }
+    
     
 }
