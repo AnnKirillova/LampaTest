@@ -28,11 +28,7 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Films"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
+        
         tableOfSearchFilms.register(UINib(nibName: regularFilms, bundle: nil), forCellReuseIdentifier: regularFilms)
         apiManager.getMovies { moviesResponse in
             DispatchQueue.main.async {
@@ -40,13 +36,19 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 self.tableOfSearchFilms.reloadData()
             }
         }
-
+        
+        setUpSearchBar()
+        
     }
     
-    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return movies.count
-//    }
+    func setUpSearchBar(){
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Films"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = false
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
