@@ -36,16 +36,13 @@ struct Movie: Codable {
 
 class APIManager{
     
-    var movies = [Movie]()
-    
-    
     func getMovies(completion: @escaping (_ result: MoviewsResponse) -> ()){
         let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=f910e2224b142497cc05444043cc8aa4")!
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { data, response, error in
             
             if error != nil {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription as Any)
                 return
             }
             do{

@@ -17,8 +17,8 @@ class RegularFilmCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
+    
     func set(movie: Movie){
         nameOfFilm.text = movie.original_title
         dateOfStart.text = movie.release_date
@@ -26,16 +26,8 @@ class RegularFilmCell: UITableViewCell {
         posterOfFilm.kf.setImage(with: imgURL)
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
-    func prepareView(){
-        let urlPolicy = URL(string: "https://www.themoviedb.org")!
-        
-        let attributedString: NSMutableAttributedString = NSMutableAttributedString(attributedString: linkForMovie.attributedText!)
-        attributedString.setAttributes([.link: urlPolicy], range: NSRange(location: 0, length: 25))
-    }
-    
 }

@@ -20,10 +20,10 @@
 		956C8C3E26959BD700060EEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956C8C3C26959BD700060EEE /* Main.storyboard */; };
 		956C8C4026959BDE00060EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956C8C3F26959BDE00060EEE /* Assets.xcassets */; };
 		956C8C4326959BDE00060EEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956C8C4126959BDE00060EEE /* LaunchScreen.storyboard */; };
-		956C8C542695B5EA00060EEE /* topFilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C8C522695B5EA00060EEE /* topFilmCell.swift */; };
-		956C8C552695B5EA00060EEE /* topFilmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956C8C532695B5EA00060EEE /* topFilmCell.xib */; };
+		956C8C542695B5EA00060EEE /* TopFilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C8C522695B5EA00060EEE /* TopFilmCell.swift */; };
+		956C8C552695B5EA00060EEE /* TopFilmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956C8C532695B5EA00060EEE /* TopFilmCell.xib */; };
 		956C8C582695B76800060EEE /* RegularFilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C8C562695B76800060EEE /* RegularFilmCell.swift */; };
-		956C8C592695B76800060EEE /* regularFilmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956C8C572695B76800060EEE /* regularFilmCell.xib */; };
+		956C8C592695B76800060EEE /* RegularFilmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956C8C572695B76800060EEE /* RegularFilmCell.xib */; };
 		956C8C5D2695CE2300060EEE /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C8C5C2695CE2300060EEE /* APIManager.swift */; };
 		9AF3FBB36CEA01FA773A92B9 /* Pods_LampaTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A81A240A0A05DB7B8F3BB8B /* Pods_LampaTest.framework */; };
 /* End PBXBuildFile section */
@@ -47,10 +47,10 @@
 		956C8C3F26959BDE00060EEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		956C8C4226959BDE00060EEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		956C8C4426959BDE00060EEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		956C8C522695B5EA00060EEE /* topFilmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topFilmCell.swift; sourceTree = "<group>"; };
-		956C8C532695B5EA00060EEE /* topFilmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = topFilmCell.xib; sourceTree = "<group>"; };
+		956C8C522695B5EA00060EEE /* TopFilmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopFilmCell.swift; sourceTree = "<group>"; };
+		956C8C532695B5EA00060EEE /* TopFilmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopFilmCell.xib; sourceTree = "<group>"; };
 		956C8C562695B76800060EEE /* RegularFilmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularFilmCell.swift; sourceTree = "<group>"; };
-		956C8C572695B76800060EEE /* regularFilmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = regularFilmCell.xib; sourceTree = "<group>"; };
+		956C8C572695B76800060EEE /* RegularFilmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegularFilmCell.xib; sourceTree = "<group>"; };
 		956C8C5C2695CE2300060EEE /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,19 +66,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9511AA5F2696E801009EA888 /* Files with xib */ = {
+		9511AA5F2696E801009EA888 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				9551B845269AE8CF00AB4BB1 /* Views */,
 				953D7D6A2696033E009372CA /* Cells */,
-				9511AA602696E849009EA888 /* HeaderView.swift */,
-				9511AA622696E8BB009EA888 /* HeaderView.xib */,
 			);
-			path = "Files with xib";
+			path = XIBs;
 			sourceTree = "<group>";
 		};
 		953D7D69269602FB009372CA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				956C8C3C26959BD700060EEE /* Main.storyboard */,
 				953D7D6F2696052C009372CA /* PageController.swift */,
 				953D7D67269602D3009372CA /* VideoController.swift */,
 				953D7D6B2696041B009372CA /* FavouritesController.swift */,
@@ -92,12 +92,29 @@
 		953D7D6A2696033E009372CA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				956C8C572695B76800060EEE /* regularFilmCell.xib */,
-				956C8C532695B5EA00060EEE /* topFilmCell.xib */,
+				956C8C572695B76800060EEE /* RegularFilmCell.xib */,
+				956C8C532695B5EA00060EEE /* TopFilmCell.xib */,
 				956C8C562695B76800060EEE /* RegularFilmCell.swift */,
-				956C8C522695B5EA00060EEE /* topFilmCell.swift */,
+				956C8C522695B5EA00060EEE /* TopFilmCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		9551B844269ADF3300AB4BB1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				956C8C5C2695CE2300060EEE /* APIManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9551B845269AE8CF00AB4BB1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9511AA602696E849009EA888 /* HeaderView.swift */,
+				9511AA622696E8BB009EA888 /* HeaderView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		956C8C2A26959BD700060EEE = {
@@ -122,11 +139,10 @@
 			isa = PBXGroup;
 			children = (
 				956C8C3626959BD700060EEE /* AppDelegate.swift */,
-				956C8C5C2695CE2300060EEE /* APIManager.swift */,
 				956C8C3826959BD700060EEE /* SceneDelegate.swift */,
+				9551B844269ADF3300AB4BB1 /* Managers */,
 				953D7D69269602FB009372CA /* Controllers */,
-				956C8C3C26959BD700060EEE /* Main.storyboard */,
-				9511AA5F2696E801009EA888 /* Files with xib */,
+				9511AA5F2696E801009EA888 /* XIBs */,
 				956C8C3F26959BDE00060EEE /* Assets.xcassets */,
 				956C8C4126959BDE00060EEE /* LaunchScreen.storyboard */,
 				956C8C4426959BDE00060EEE /* Info.plist */,
@@ -210,9 +226,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				956C8C592695B76800060EEE /* regularFilmCell.xib in Resources */,
+				956C8C592695B76800060EEE /* RegularFilmCell.xib in Resources */,
 				956C8C4326959BDE00060EEE /* LaunchScreen.storyboard in Resources */,
-				956C8C552695B5EA00060EEE /* topFilmCell.xib in Resources */,
+				956C8C552695B5EA00060EEE /* TopFilmCell.xib in Resources */,
 				9511AA632696E8BB009EA888 /* HeaderView.xib in Resources */,
 				956C8C4026959BDE00060EEE /* Assets.xcassets in Resources */,
 				956C8C3E26959BD700060EEE /* Main.storyboard in Resources */,
@@ -277,7 +293,7 @@
 				9511AA612696E849009EA888 /* HeaderView.swift in Sources */,
 				9551B8412698B9C100AB4BB1 /* SearchController.swift in Sources */,
 				953D7D68269602D3009372CA /* VideoController.swift in Sources */,
-				956C8C542695B5EA00060EEE /* topFilmCell.swift in Sources */,
+				956C8C542695B5EA00060EEE /* TopFilmCell.swift in Sources */,
 				956C8C3726959BD700060EEE /* AppDelegate.swift in Sources */,
 				956C8C3926959BD700060EEE /* SceneDelegate.swift in Sources */,
 			);
@@ -356,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -411,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -430,6 +446,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 744VW4YN96;
 				INFOPLIST_FILE = LampaTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,6 +467,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 744VW4YN96;
 				INFOPLIST_FILE = LampaTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

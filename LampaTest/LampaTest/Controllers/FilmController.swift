@@ -27,6 +27,4 @@ class FilmController: UIViewController {
         filmImage.kf.setImage(with: imgURL)
         title = movie.original_title
     }
-    
-    
 }

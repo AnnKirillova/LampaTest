@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,12 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="LampaTest" customModuleProvider="target">
             <connections>
-                <outlet property="favouriresBtnOutlet" destination="oVA-2C-tPd" id="22n-UN-09A"/>
-                <outlet property="img1" destination="avh-k5-QQZ" id="pip-ch-huW"/>
-                <outlet property="img2" destination="F4m-NO-tT2" id="BpQ-vr-es4"/>
-                <outlet property="img3" destination="e5x-CL-E82" id="Pdn-HW-OFu"/>
-                <outlet property="storiesBtnOutlet" destination="BvE-34-c5w" id="HmI-7Y-XCv"/>
-                <outlet property="videoBtnOutlet" destination="d6K-jp-ssu" id="cGW-nJ-w8L"/>
+                <outlet property="favouriresBottomLine" destination="e5x-CL-E82" id="Pdn-HW-OFu"/>
+                <outlet property="favouriresBtn" destination="oVA-2C-tPd" id="22n-UN-09A"/>
+                <outlet property="storiesBottomLine" destination="avh-k5-QQZ" id="pip-ch-huW"/>
+                <outlet property="storiesBtn" destination="BvE-34-c5w" id="HmI-7Y-XCv"/>
+                <outlet property="videoBottomLine" destination="F4m-NO-tT2" id="BpQ-vr-es4"/>
+                <outlet property="videoBtn" destination="d6K-jp-ssu" id="cGW-nJ-w8L"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -50,11 +51,11 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large" renderingMode="template"/>
+                                <imageReference key="image" image="search" symbolScale="large" renderingMode="template"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
                             </state>
                             <connections>
-                                <action selector="searchAct:" destination="-1" eventType="touchUpInside" id="c9n-2S-7ue"/>
+                                <action selector="searchAction:" destination="-1" eventType="touchUpInside" id="c9n-2S-7ue"/>
                             </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKQ-xU-JJ5">
@@ -70,7 +71,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="storiesBtn:" destination="-1" eventType="touchUpInside" id="8JX-rW-4KA"/>
+                                                <action selector="storiesAction:" destination="-1" eventType="touchUpInside" id="8JX-rW-4KA"/>
                                             </connections>
                                         </button>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="avh-k5-QQZ">
@@ -96,7 +97,7 @@
                                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="videoBtn:" destination="-1" eventType="touchUpInside" id="vU0-sN-Miy"/>
+                                                <action selector="videoAction:" destination="-1" eventType="touchUpInside" id="vU0-sN-Miy"/>
                                             </connections>
                                         </button>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F4m-NO-tT2">
@@ -122,7 +123,7 @@
                                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="favouritesBtn:" destination="-1" eventType="touchUpInside" id="ptU-bY-3ch"/>
+                                                <action selector="favouritesAction:" destination="-1" eventType="touchUpInside" id="ptU-bY-3ch"/>
                                             </connections>
                                         </button>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e5x-CL-E82">
@@ -165,6 +166,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="JTk-Dl-bC5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="BUQ-zl-JdV"/>
+                <constraint firstAttribute="bottom" secondItem="JTk-Dl-bC5" secondAttribute="bottom" id="GQG-gx-uhQ"/>
                 <constraint firstItem="JTk-Dl-bC5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ocb-xb-5Mu"/>
                 <constraint firstItem="JTk-Dl-bC5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Oom-iH-UOC"/>
                 <constraint firstItem="JTk-Dl-bC5" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="fyX-5T-OV6"/>
@@ -174,8 +176,8 @@
         </view>
     </objects>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="menu" width="256" height="256"/>
+        <image name="search" width="64" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -9,10 +9,9 @@ import UIKit
 
 class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
     @IBOutlet weak var tableOfSearchFilms: UITableView!
     
-    let regularFilms = "regularFilmCell"
+    let regularFilms = "RegularFilmCell"
     private let searchController = UISearchController(searchResultsController: nil)
     private var filteredFilms = [Movie]()
     private var searchBarIsEmpty: Bool{
@@ -28,7 +27,27 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        
+        setUpTableOfFilms()
+        setUpSearchController()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchController.isActive = true
+        searchController.definesPresentationContext = true
+    }
+    
+    func setUpSearchController(){
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Films"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.delegate = self
+    }
+    
+    func setUpTableOfFilms(){
         tableOfSearchFilms.register(UINib(nibName: regularFilms, bundle: nil), forCellReuseIdentifier: regularFilms)
         apiManager.getMovies { moviesResponse in
             DispatchQueue.main.async {
@@ -36,18 +55,6 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 self.tableOfSearchFilms.reloadData()
             }
         }
-        
-        setUpSearchBar()
-        
-    }
-    
-    func setUpSearchBar(){
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Films"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-        navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,17 +80,23 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
 
 }
 
-extension SearchController: UISearchResultsUpdating {
+extension SearchController: UISearchResultsUpdating, UISearchControllerDelegate {
     
-  func updateSearchResults(for searchController: UISearchController) {
-    filterContentForSearchText(searchController.searchBar.text!)
-  }
-   private func filterContentForSearchText(_ searchText: String) {
-      filteredFilms = movies.filter { (movie: Movie) -> Bool in
-        return movie.original_title.lowercased().contains(searchText.lowercased())
-      }
-    tableOfSearchFilms.reloadData()
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
     }
-
+    
+    private func filterContentForSearchText(_ searchText: String) {
+        filteredFilms = movies.filter { (movie: Movie) -> Bool in
+            return movie.original_title.lowercased().contains(searchText.lowercased())
+        }
+        tableOfSearchFilms.reloadData()
+    }
+    
+    func didPresentSearchController(_ searchController: UISearchController) {
+        DispatchQueue.main.async {
+            self.searchController.searchBar.becomeFirstResponder()
+        }
+    }
 }
 

@@ -8,8 +8,8 @@
 import UIKit
 import Kingfisher
 
-class topFilmCell: UITableViewCell {
-
+class TopFilmCell: UITableViewCell {
+    
     @IBOutlet weak var top: UIView!
     @IBOutlet weak var nameOfTopFilm: UILabel!
     @IBOutlet weak var imageOfTopFilm: UIImageView!
@@ -20,14 +20,14 @@ class topFilmCell: UITableViewCell {
         super.awakeFromNib()
         top.layer.cornerRadius = 15
         let initialColor = UIColor.clear
-                let finalColor = UIColor.black
-                
-                let gradientLayer = CAGradientLayer()
-                gradientLayer.type = .axial
-                gradientLayer.colors = [initialColor.cgColor, finalColor.cgColor]
-                gradientLayer.locations = [0, 1]
-                gradientLayer.frame = imageOfTopFilm.bounds
-                imageOfTopFilm.layer.addSublayer(gradientLayer)
+        let finalColor = UIColor.black
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.type = .axial
+        gradientLayer.colors = [initialColor.cgColor, finalColor.cgColor]
+        gradientLayer.locations = [0, 1]
+        gradientLayer.frame = imageOfTopFilm.bounds
+        imageOfTopFilm.layer.addSublayer(gradientLayer)
         
     }
     
@@ -38,17 +38,8 @@ class topFilmCell: UITableViewCell {
         imageOfTopFilm.kf.setImage(with: imgURL)
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
-    func prepareView(){
-        let urlPolicy = URL(string: "https://www.themoviedb.org")!
-        
-        let attributedString: NSMutableAttributedString = NSMutableAttributedString(attributedString: linkOfMovies.attributedText!)
-        attributedString.setAttributes([.link: urlPolicy], range: NSRange(location: 0, length: 25))
-        
-    }
-    
 }

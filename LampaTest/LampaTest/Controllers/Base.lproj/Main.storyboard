@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6wY-0h-Svo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -37,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWz-gg-4gT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1059.4202898550725" y="829.6875"/>
+            <point key="canvasLocation" x="3038" y="-277"/>
         </scene>
         <!--Stories Controller-->
         <scene sceneID="zRa-qp-03W">
@@ -73,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sLI-p9-VuM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="107.24637681159422" y="829.6875"/>
+            <point key="canvasLocation" x="2235" y="64"/>
         </scene>
         <!--Video Controller-->
         <scene sceneID="rce-D3-IjL">
@@ -100,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFI-wx-hhW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1216" y="830"/>
+            <point key="canvasLocation" x="2235" y="-771"/>
         </scene>
         <!--Favourites Controller-->
         <scene sceneID="aEy-bC-2xX">
@@ -127,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXk-SI-JnV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2271" y="830"/>
+            <point key="canvasLocation" x="2235" y="940"/>
         </scene>
         <!--Search Controller-->
         <scene sceneID="ecq-xJ-mS6">
@@ -147,7 +148,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IJP-v3-AEq"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jgf-8c-0Kq" firstAttribute="trailing" secondItem="IJP-v3-AEq" secondAttribute="trailing" id="GYB-4k-fcB"/>
                             <constraint firstItem="jgf-8c-0Kq" firstAttribute="leading" secondItem="IJP-v3-AEq" secondAttribute="leading" id="Rlj-BP-kKj"/>
@@ -161,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BmF-ed-agP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="105.79710144927537" y="1553.5714285714284"/>
+            <point key="canvasLocation" x="3039" y="594"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Egc-Lo-bzU">
